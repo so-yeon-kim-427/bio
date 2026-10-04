@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So-Yeon Kim (Clara) | Life Science Researcher</title>
+    <meta name="description" content="So-Yeon Kim (Clara), Postdoctoral Researcher at UNIST. Research on the mitochondrial chaperone TRAP1 in cancer and ischemic retinopathy.">
+    <style>
+        :root {
+            --primary-color: #0b5cad;
+            --text-color: #2b2f33;
+            --heading-color: #111418;
+            --bg: #ffffff;
+            --light-bg: #f6f8fa;
+            --border-color: #e3e7eb;
+            --meta-color: #5f6b76;
+            --badge-bg: #e8f0fa;
+            --badge-text: #0b4a8c;
+            --if-color: #0b5cad;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #6cb0ff;
+                --text-color: #d6dbe0;
+                --heading-color: #f2f4f6;
+                --bg: #121417;
+                --light-bg: #1a1d21;
+                --border-color: #2c3137;
+                --meta-color: #9aa5b0;
+                --badge-bg: #1f2d3d;
+                --badge-text: #9cc8ff;
+                --if-color: #6cb0ff;
+            }
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--bg);
+            display: flex;
+        }
+
+        a { color: var(--primary-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        a:focus-visible { outline: 2px solid var(--primary-color); outline-offset: 2px; border-radius: 2px; }
+
+        /* ---------- Sidebar ---------- */
+        .sidebar {
+            width: 280px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            background: var(--light-bg);
+            border-right: 1px solid var(--border-color);
+            padding: 3rem 2rem;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 20%;
+            display: block;
+            margin-bottom: 1.5rem;
+            border: 3px solid var(--bg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        .sidebar h1 {
+            font-size: 1.6rem;
+            line-height: 1.25;
+            color: var(--heading-color);
+            margin-bottom: 0.35rem;
+        }
+        .sidebar .role {
+            color: var(--meta-color);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+        .contact { list-style: none; font-size: 0.92rem; margin-bottom: 2rem; }
+        .contact li { margin-bottom: 0.3rem; word-break: break-all; }
+        .nav-links { list-style: none; border-top: 1px solid var(--border-color); padding-top: 1.25rem; }
+        .nav-links li { margin-bottom: 0.6rem; }
+        .nav-links a { color: var(--text-color); font-weight: 500; }
+        .nav-links a:hover { color: var(--primary-color); }
+
+        /* ---------- Content ---------- */
+        .content {
+            margin-left: 280px;
+            padding: 4rem;
+            max-width: 980px;
+            width: 100%;
+        }
+        section { margin-bottom: 4rem; scroll-margin-top: 2rem; }
+        h2 {
+            font-size: 1.5rem;
+            color: var(--heading-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        h3 {
+            font-size: 1.05rem;
+            color: var(--heading-color);
+            margin: 2rem 0 1rem;
+        }
+        h3:first-of-type { margin-top: 0; }
+        p + p { margin-top: 0.9rem; }
+
+        .item { margin-bottom: 1.75rem; }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+        }
+        .item-title { font-weight: 600; color: var(--heading-color); }
+        .item-date { color: var(--meta-color); font-size: 0.9rem; white-space: nowrap; }
+        .item-subtitle { color: var(--meta-color); }
+        .bullet-list { margin: 0.4rem 0 0 1.2rem; }
+        .bullet-list li { margin-bottom: 0.2rem; }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 1.75rem;
+        }
+        .stat {
+            background: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem 1.1rem;
+        }
+        .stat-value { font-size: 1.4rem; font-weight: 700; color: var(--heading-color); }
+        .stat-label { font-size: 0.88rem; color: var(--meta-color); }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.05rem 0.45rem;
+            border-radius: 4px;
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            vertical-align: 1px;
+        }
+        a.badge:hover { text-decoration: none; filter: brightness(0.95); }
+
+        /* Publications */
+        .pub { display: flex; gap: 1rem; margin-bottom: 1.5rem; scroll-margin-top: 2rem; }
+        .pub-id { flex: 0 0 2.6rem; padding-top: 0.15rem; }
+        .pub-title { font-weight: 600; color: var(--heading-color); }
+        .pub-authors { font-size: 0.93rem; }
+        .pub-authors .me { font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
+        .pub-venue { font-style: italic; font-size: 0.93rem; color: var(--meta-color); }
+        .pub-links { font-size: 0.9rem; }
+        .pub-if { font-weight: 700; color: var(--if-color); margin-left: 0.4rem; }
+        .pub:target { background: var(--badge-bg); border-radius: 6px; }
+
+        /* Awards / simple rows */
+        .row { display: flex; gap: 1.5rem; margin-bottom: 0.6rem; }
+        .row-year { flex: 0 0 4.5rem; color: var(--meta-color); font-size: 0.92rem; padding-top: 0.1rem; }
+        .row-body .org { font-style: italic; color: var(--meta-color); }
+
+        .press-item { margin-bottom: 1rem; }
+        .press-source { font-style: italic; font-size: 0.9rem; color: var(--meta-color); }
+
+        footer { color: var(--meta-color); font-size: 0.85rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem; }
+
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding: 2rem 1rem;
+            }
+            .nav-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; }
+            .nav-links li { margin-bottom: 0; }
+            .content { margin-left: 0; padding: 2rem 1rem; }
+            .item-header { flex-direction: column; gap: 0; }
+            .pub { gap: 0.6rem; }
+            .row { gap: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <img src="profile.jpg" alt="Portrait of So-Yeon Kim" class="profile-img" width="150" height="150">
+        <h1>So-Yeon Kim<br>(Clara)</h1>
+        <p class="role">Postdoctoral Researcher, UNIST<br>Life Sciences</p>
+        <ul class="contact">
+            <li><a href="mailto:soyeonkim@unist.ac.kr">soyeonkim@unist.ac.kr</a></li>
+            <li><a href="https://www.linkedin.com/in/so-yeon-kim-6076b1432" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+        <nav aria-label="Sections">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#employment">Employment</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#awards">Awards &amp; Grants</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#mentorship">Mentorship</a></li>
+                <li><a href="#press">Press</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <section id="about">
+            <h2>About</h2>
+            <p>I am a postdoctoral researcher in the Department of Life Sciences at the Ulsan National Institute of Science and Technology (UNIST) and a researcher at SmartinBio. My research focuses on the mitochondrial chaperone <strong>TRAP1</strong> and how it can be targeted to treat disease, from cancer to ischemic retinopathy.</p>
+            <p>As first author, I showed that targeting TRAP1 alleviates vascular pathologies in ischemic retinopathy, which points toward an eye-drop treatment <a href="#J7" class="badge">J7</a>. I also showed that cancer-associated adipocytes depend on TRAP1 to promote tumor growth <a href="#J8" class="badge">J8</a>. I currently lead an NRF-funded project as Principal Investigator (2025–2028).</p>
+            <div class="highlights">
+                <div class="stat"><div class="stat-value">8</div><div class="stat-label">International journal papers (3 first-author)</div></div>
+                <div class="stat"><div class="stat-value">IF 81.2</div><div class="stat-label">Signal Transduction and Targeted Therapy, 2026</div></div>
+                <div class="stat"><div class="stat-value">PI</div><div class="stat-label">NRF grant, 210M KRW (2025–2028)</div></div>
+            </div>
+        </section>
+
+        <section id="employment">
+            <h2>Employment</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Postdoctoral Researcher</span>
+                    <span class="item-date">Mar. 2024 – Present</span>
+                </div>
+                <div class="item-subtitle">Ulsan National Institute of Science &amp; Technology (UNIST) | Department of Life Sciences, College of Natural Sciences</div>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Researcher</span>
+                    <span class="item-date">Mar. 2024 – Present</span>
+                </div>
+                <div class="item-subtitle">SmartinBio | Department of Life Science Research</div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Ph.D., Biological Science</span>
+                    <span class="item-date">Aug. 2017 – Feb. 2024</span>
+                </div>
+                <div class="item-subtitle">Ulsan National Institute of Science &amp; Technology (UNIST)</div>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">M.S., Biological Science</span>
+                    <span class="item-date">Aug. 2018 – Feb. 2021</span>
+                </div>
+                <div class="item-subtitle">Ulsan National Institute of Science &amp; Technology (UNIST) | Advisor: Prof. Byoung Heon Kang</div>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">B.S., Biochemistry</span>
+                    <span class="item-date">Mar. 2010 – Feb. 2014</span>
+                </div>
+                <div class="item-subtitle">Gyeongsang National University</div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+
+            <h3>International journal papers (1st author)</h3>
+
+            <div class="pub" id="J8">
+                <div class="pub-id"><span class="badge">J8</span></div>
+                <div>
+                    <div class="pub-title">The pro-tumorigenic functions of cancer-associated adipocytes are dependent on the mitochondrial chaperone tumor necrosis factor receptor-associated protein 1</div>
+                    <div class="pub-authors">Nam Gu Yoon, <span class="me">So-Yeon Kim</span>, So-Youn Jung, Kujin Kwon, Sun A Yeom, Hye-Kyung Park, Ji Hye Lee, Jin-Sun Ryu, Gi Yeon Lee, Min-Chae Kang, Taejoon Kwon, Sun-Young Kong, Byoung Heon Kang</div>
+                    <div class="pub-venue">Signal Transduction and Targeted Therapy (2026)</div>
+                    <div class="pub-links"><a href="https://doi.org/10.1038/s41392-026-02861-8" target="_blank" rel="noopener">DOI</a><span class="pub-if">IF 81.2</span></div>
+                </div>
+            </div>
+
+            <div class="pub" id="J7">
+                <div class="pub-id"><span class="badge">J7</span></div>
+                <div>
+                    <div class="pub-title">Targeting the Mitochondrial Chaperone TRAP1 Alleviates Vascular Pathologies in Ischemic Retinopathy</div>
+                    <div class="pub-authors"><span class="me">So-Yeon Kim</span>, Nam Gu Yoon, Jin Young Im, Ji Hye Lee, Juhee Kim, Yujin Jeon, Young Jae Choi, Jong-Hwa Lee, Akiyoshi Uemura, Dong Ho Park, Byoung Heon Kang</div>
+                    <div class="pub-venue">Advanced Science (2024)</div>
+                    <div class="pub-links"><span class="pub-if">IF 14.3</span></div>
+                </div>
+            </div>
+
+            <div class="pub" id="J6">
+                <div class="pub-id"><span class="badge">J6</span></div>
+                <div>
+                    <div class="pub-title">Development of pyrazolo[3,4-d]pyrimidine-6-amine-based TRAP1 inhibitors that demonstrate in vivo anticancer activity in mouse xenograft models</div>
+                    <div class="pub-authors">Darong Kim, <span class="me">So-Yeon Kim</span>, Dongyoung Kim, Nam Gu Yoon, Jisu Yun, Ki Bum Hong, Changwook Lee, Ji Hoon Lee, Byoung Heon Kang, Soosung Kang</div>
+                    <div class="pub-venue">Bioorganic Chemistry (2020)</div>
+                    <div class="pub-links"><a href="https://doi.org/10.1016/j.bioorg.2020.103901" target="_blank" rel="noopener">DOI</a><span class="pub-if">IF 5.275</span></div>
+                </div>
+            </div>
+
+            <h3>International journal papers (co-author)</h3>
+
+            <div class="pub" id="J5">
+                <div class="pub-id"><span class="badge">J5</span></div>
+                <div>
+                    <div class="pub-title">Pseudohypoxic stabilization of HIF1α via cyclophilin D suppression promotes melanoma metastasis</div>
+                    <div class="pub-authors">Hye-Kyung Park, Sung Hu, <span class="me">So Yeon Kim</span>, Sora Yoon, Nam Gu Yoon, Ji Hye Lee, Wonyoung Choi, Sun-Young Kong, Jong Heon Kim, Dougu Nam, Byoung Heon Kang</div>
+                    <div class="pub-venue">Signal Transduction and Targeted Therapy (2025)</div>
+                    <div class="pub-links"><a href="https://doi.org/10.1038/s41392-025-02314-8" target="_blank" rel="noopener">DOI</a><span class="pub-if">IF 52.7</span></div>
+                </div>
+            </div>
+
+            <div class="pub" id="J4">
+                <div class="pub-id"><span class="badge">J4</span></div>
+                <div>
+                    <div class="pub-title">Development of a Fluorescence Probe for High-Throughput Screening of Allosteric Inhibitors Targeting TRAP1</div>
+                    <div class="pub-authors">Nam Gu Yoon, Danbi Choi, Ji Hye Lee, <span class="me">So-Yeon Kim</span>, Jin Young Im, Jisu Yun, Sujae Yang, Taeeun Kim, Soosung Kang, Byoung Heon Kang</div>
+                    <div class="pub-venue">Journal of Medicinal Chemistry (2024)</div>
+                    <div class="pub-links"><a href="https://doi.org/10.1021/acs.jmedchem.4c02343" target="_blank" rel="noopener">DOI</a><span class="pub-if">IF 6.9</span></div>
+                </div>
+            </div>
+
+            <div class="pub" id="J3">
+                <div class="pub-id"><span class="badge">J3</span></div>
+                <div>
+                    <div class="pub-title">Mitoquinone Inactivates Mitochondrial Chaperone TRAP1 by Blocking the Client Binding Site</div>
+                    <div class="pub-authors">Nam Gu Yoon, Hakbong Lee, <span class="me">So-Yeon Kim</span>, Sung Hu, Darong Kim, Sujae Yang, Ki Bum Hong, Ji Hoon Lee, Soosung Kang, Byung-Gyu Kim, Kyungjae Myung, Changwook Lee, Byoung Heon Kang</div>
+                    <div class="pub-venue">Journal of the American Chemical Society (2021)</div>
+                    <div class="pub-links"><a href="https://doi.org/10.1021/jacs.1c07099" target="_blank" rel="noopener">DOI</a><span class="pub-if">IF 15.419</span></div>
+                </div>
+            </div>
+
+            <div class="pub" id="J2">
+                <div class="pub-id"><span class="badge">J2</span></div>
+                <div>
+                    <div class="pub-title">Design and Synthesis of TRAP1 Selective Inhibitors: H-Bonding with Asn171 Residue in TRAP1 Increases Paralog Selectivity</div>
+                    <div class="pub-authors">Sujae Yang, Nam Gu Yoon, Dongyoung Kim, Eunsun Park, <span class="me">So-Yeon Kim</span>, Ji Hoon Lee, Changwook Lee, Byoung Heon Kang, Soosung Kang</div>
+                    <div class="pub-venue">ACS Medicinal Chemistry Letters (2021)</div>
+                    <div class="pub-links"><a href="https://doi.org/10.1021/acsmedchemlett.1c00213" target="_blank" rel="noopener">DOI</a><span class="pub-if">IF 4.345</span></div>
+                </div>
+            </div>
+
+            <div class="pub" id="J1">
+                <div class="pub-id"><span class="badge">J1</span></div>
+                <div>
+                    <div class="pub-title">Unleashing the full potential of Hsp90 inhibitors as cancer therapeutics through simultaneous inactivation of Hsp90, Grp94, and TRAP1</div>
+                    <div class="pub-authors">Hye-Kyung Park, Nam Gu Yoon, Ji-Eun Lee, Sung Hu, Sora Yoon, <span class="me">So Yeon Kim</span>, Jun-Hee Hong, Dougu Nam, Young Chan Chae, Jong Bae Park, Byoung Heon Kang</div>
+                    <div class="pub-venue">Experimental &amp; Molecular Medicine (2020)</div>
+                    <div class="pub-links"><a href="https://doi.org/10.1038/s12276-019-0360-x" target="_blank" rel="noopener">DOI</a><span class="pub-if">IF 8.718</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="awards">
+            <h2>Awards, Grants &amp; Recognitions</h2>
+            <div class="row">
+                <div class="row-year">2025</div>
+                <div class="row-body">
+                    <strong>NRF (National Research Foundation of Korea) grant for doctoral research</strong>
+                    <ul class="bullet-list">
+                        <li>Principal Investigator (PI), Jun. 2025 – Jun. 2028</li>
+                        <li>210,000,000 KRW (approx. 157,000 USD)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row-year">2023</div>
+                <div class="row-body"><strong>Young Bio Research Award</strong>, <span class="org">Ulsan National Institute of Science &amp; Technology</span></div>
+            </div>
+            <div class="row">
+                <div class="row-year">2023</div>
+                <div class="row-body"><strong>Best Oral Presentation</strong>, <span class="org">Cell Stress Society International</span></div>
+            </div>
+            <div class="row">
+                <div class="row-year">2023</div>
+                <div class="row-body"><strong>Best Poster Presentation</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span></div>
+            </div>
+            <div class="row">
+                <div class="row-year">2023</div>
+                <div class="row-body"><strong>Silver Prize, Samsung Human Tech Paper Award</strong>, <span class="org">Samsung Electronics</span></div>
+            </div>
+            <div class="row">
+                <div class="row-year">2021</div>
+                <div class="row-body"><strong>Young Scientists Award</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span></div>
+            </div>
+            <div class="row">
+                <div class="row-year">2020</div>
+                <div class="row-body"><strong>Young Scientists Award</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span></div>
+            </div>
+            <div class="row">
+                <div class="row-year">2018</div>
+                <div class="row-body"><strong>Best Poster Presentation</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span></div>
+            </div>
+        </section>
+
+        <section id="teaching">
+            <h2>Teaching Experience</h2>
+            <h3>Teaching Assistant</h3>
+            <div class="row">
+                <div class="row-year">2019 Spring</div>
+                <div class="row-body"><strong>Trends in Modern Life Sciences</strong> (UNIST)</div>
+            </div>
+            <div class="row">
+                <div class="row-year">2018 Spring</div>
+                <div class="row-body"><strong>General Biology</strong> (UNIST)</div>
+            </div>
+            <div class="row">
+                <div class="row-year">2016 Spring</div>
+                <div class="row-body"><strong>Experimental Biology</strong> (UNIST)</div>
+            </div>
+        </section>
+
+        <section id="mentorship">
+            <h2>Academic Mentorship</h2>
+            <ul class="bullet-list">
+                <li>Ji Hye Lee, UNIST (Ph.D. Student), Summer 2022 – Present <a href="#J4" class="badge">J4</a> <a href="#J5" class="badge">J5</a> <a href="#J7" class="badge">J7</a> <a href="#J8" class="badge">J8</a></li>
+                <li>Sun A Yeom, UNIST (Ph.D. Student), Spring 2024 – Present <a href="#J8" class="badge">J8</a></li>
+                <li>Chang Won Lee, UNIST (Master's Student), Spring 2023 – Present</li>
+                <li>Jaeho Kim, UNIST (Master's Student), Spring 2022 – 2025</li>
+            </ul>
+        </section>
+
+        <section id="press">
+            <h2>Press</h2>
+            <p style="margin-bottom:1.25rem">My research has been featured in major South Korean media outlets, including Yonhap News Agency and SBS Biz. Titles are translated into English.</p>
+            <div class="press-item">
+                <a href="https://biz.sbs.co.kr/article/20000326486" target="_blank" rel="noopener">“Targeting Cancer-Supporting Adipocytes Opens a New Path to Overcome Chemotherapy Resistance in Breast Cancer”</a>
+                <div class="press-source">SBS Biz (Aug. 2026)</div>
+            </div>
+            <div class="press-item">
+                <a href="https://www.iusm.co.kr/news/articleView.html?idxno=1066256" target="_blank" rel="noopener">“Researchers Identify TRAP1 as a Key Regulator That Turns Adipocytes into ‘Cancer Accomplices’”</a>
+                <div class="press-source">Ulsan Maeil (Aug. 2026)</div>
+            </div>
+            <div class="press-item">
+                <a href="https://www.yna.co.kr/amp/view/AKR20260804097700057" target="_blank" rel="noopener">“Researchers Discover a Regulatory Protein That Enables Adipocytes to Promote Cancer Growth”</a>
+                <div class="press-source">Yonhap News Agency (Aug. 2026)</div>
+            </div>
+            <div class="press-item">
+                <a href="https://www.yna.co.kr/view/AKR20250707094000057" target="_blank" rel="noopener">“UNIST Researchers Selected for National Postdoctoral Research Support Program”</a>
+                <div class="press-source">Yonhap News Agency (Jul. 2025)</div>
+            </div>
+            <div class="press-item">
+                <a href="https://www.metroseoul.co.kr/article/20250707500500" target="_blank" rel="noopener">“UNIST Researchers Selected for the Post-Doc Growth-Oriented Research Support Program”</a>
+                <div class="press-source">Metro Seoul (Jul. 2025)</div>
+            </div>
+            <div class="press-item">
+                <a href="https://webzine.unist.ac.kr/data_ko/no50/sub/infra.php" target="_blank" rel="noopener">“Planting Seeds of Hope: Dr. So-Yeon Kim’s Research Journey Toward New Treatments for Retinal Disease”</a>
+                <div class="press-source">UNIST Magazine, No. 50 (Fall 2025)</div>
+            </div>
+            <div class="press-item">
+                <a href="https://www.yna.co.kr/view/AKR20240115063800057" target="_blank" rel="noopener">“Eye-Drop Treatment Offers a New Approach for Ischemic Retinopathy”</a>
+                <div class="press-source">Yonhap News Agency (Jan. 2024)</div>
+            </div>
+            <div class="press-item">
+                <a href="https://adm-u.unist.ac.kr/unist/center/press.do?article.offset=1460&amp;articleLimit=10&amp;articleNo=250027&amp;mode=view" target="_blank" rel="noopener">“A Convenient Eye-Drop Treatment for Diabetic Retinopathy”</a>
+                <div class="press-source">UNIST News (Jan. 2024)</div>
+            </div>
+        </section>
+
+        <footer>Last updated: October 2026</footer>
+    </main>
+</body>
+</html>
