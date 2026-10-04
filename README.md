@@ -1,8 +1,8 @@
-# so-yeon-kim-427.github.io
+# bio
 
 Academic portfolio of So-Yeon Kim (Clara), Postdoctoral Researcher at UNIST (Life Sciences).
 
-Live site: https://so-yeon-kim-427.github.io
+Live site: https://so-yeon-kim-427.github.io/bio/
 
 Static HTML page with no build step. To preview locally:
 
