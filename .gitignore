@@ -1,3 +1,9 @@
-# Source files kept locally only (CV draft still has placeholders; original photo is replaced by profile.jpg)
+# Source files kept locally only (not published)
+# - CV drafts still have placeholders
+# - original photo is replaced by profile.jpg
+# - the spreadsheet holds degree registration numbers and GPAs
+# - original certificates are replaced by resized copies in images/awards/
 *.pdf
+*.xlsx
 김소연.jpg
+상장/

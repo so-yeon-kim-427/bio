@@ -160,14 +160,61 @@
         .pub-authors { font-size: 0.93rem; }
         .pub-authors .me { font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
         .pub-venue { font-style: italic; font-size: 0.93rem; color: var(--meta-color); }
+        .pub-summary { font-size: 0.9rem; margin: 0.2rem 0; }
         .pub-links { font-size: 0.9rem; }
         .pub-if { font-weight: 700; color: var(--if-color); margin-left: 0.4rem; }
         .pub:target { background: var(--badge-bg); border-radius: 6px; }
 
         /* Awards / simple rows */
         .row { display: flex; gap: 1.5rem; margin-bottom: 0.6rem; }
-        .row-year { flex: 0 0 4.5rem; color: var(--meta-color); font-size: 0.92rem; padding-top: 0.1rem; }
+        .row-year { flex: 0 0 5.5rem; color: var(--meta-color); font-size: 0.92rem; padding-top: 0.1rem; }
         .row-body .org { font-style: italic; color: var(--meta-color); }
+
+        .row-detail { font-size: 0.88rem; color: var(--meta-color); }
+        .cert-link { margin-left: 0.35rem; }
+
+        /* Certificates */
+        .cert-heading { margin-top: 2.5rem; }
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+            gap: 1.25rem;
+        }
+        .cert { margin: 0; }
+        .cert a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 4 / 3;
+            background: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            padding: 0.5rem;
+            transition: border-color 0.15s, box-shadow 0.15s;
+        }
+        .cert a:hover { border-color: var(--primary-color); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); }
+        .cert img { max-width: 100%; max-height: 100%; display: block; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
+        .cert figcaption { font-size: 0.82rem; color: var(--meta-color); margin-top: 0.45rem; line-height: 1.4; }
+
+        .lightbox {
+            border: none;
+            padding: 0;
+            background: transparent;
+            max-width: 92vw;
+            max-height: 92vh;
+            margin: auto;
+        }
+        .lightbox::backdrop { background: rgba(0, 0, 0, 0.8); }
+        .lightbox img { display: block; max-width: 92vw; max-height: 84vh; border-radius: 4px; }
+        .lightbox p { color: #fff; text-align: center; margin-top: 0.6rem; font-size: 0.9rem; }
+        .lightbox button {
+            position: fixed; top: 1rem; right: 1rem;
+            background: rgba(255, 255, 255, 0.15); color: #fff;
+            border: none; border-radius: 50%; width: 2.5rem; height: 2.5rem;
+            font-size: 1.4rem; cursor: pointer;
+        }
+        .lightbox button:focus-visible { outline: 2px solid #fff; }
 
         .press-item { margin-bottom: 1rem; }
         .press-source { font-style: italic; font-size: 0.9rem; color: var(--meta-color); }
@@ -281,7 +328,8 @@
                 <div>
                     <div class="pub-title">The pro-tumorigenic functions of cancer-associated adipocytes are dependent on the mitochondrial chaperone tumor necrosis factor receptor-associated protein 1</div>
                     <div class="pub-authors">Nam Gu Yoon, <span class="me">So-Yeon Kim</span>, So-Youn Jung, Kujin Kwon, Sun A Yeom, Hye-Kyung Park, Ji Hye Lee, Jin-Sun Ryu, Gi Yeon Lee, Min-Chae Kang, Taejoon Kwon, Sun-Young Kong, Byoung Heon Kang</div>
-                    <div class="pub-venue">Signal Transduction and Targeted Therapy (2026)</div>
+                    <div class="pub-venue">Signal Transduction and Targeted Therapy, 11(1), 294 (2026)</div>
+                    <div class="pub-summary">Showed that TRAP1 drives the reprogramming of cancer-associated adipocytes and their secretion of tumor-promoting adipokines, promoting breast cancer growth and chemoresistance.</div>
                     <div class="pub-links"><a href="https://doi.org/10.1038/s41392-026-02861-8" target="_blank" rel="noopener">DOI</a><span class="pub-if">IF 81.2</span></div>
                 </div>
             </div>
@@ -291,7 +339,8 @@
                 <div>
                     <div class="pub-title">Targeting the Mitochondrial Chaperone TRAP1 Alleviates Vascular Pathologies in Ischemic Retinopathy</div>
                     <div class="pub-authors"><span class="me">So-Yeon Kim</span>, Nam Gu Yoon, Jin Young Im, Ji Hye Lee, Juhee Kim, Yujin Jeon, Young Jae Choi, Jong-Hwa Lee, Akiyoshi Uemura, Dong Ho Park, Byoung Heon Kang</div>
-                    <div class="pub-venue">Advanced Science (2024)</div>
+                    <div class="pub-venue">Advanced Science, 11(2), 2302776 (2024)</div>
+                    <div class="pub-summary">Showed that TRAP1 promotes HIF-1α-mediated angiogenesis, and that inhibiting TRAP1 alleviates abnormal vessel formation and lesions in ischemic retinopathy.</div>
                     <div class="pub-links"><a href="https://doi.org/10.1002/advs.202302776" target="_blank" rel="noopener">DOI</a><span class="pub-if">IF 14.3</span></div>
                 </div>
             </div>
@@ -301,7 +350,7 @@
                 <div>
                     <div class="pub-title">Development of pyrazolo[3,4-d]pyrimidine-6-amine-based TRAP1 inhibitors that demonstrate in vivo anticancer activity in mouse xenograft models</div>
                     <div class="pub-authors">Darong Kim, <span class="me">So-Yeon Kim</span>, Dongyoung Kim, Nam Gu Yoon, Jisu Yun, Ki Bum Hong, Changwook Lee, Ji Hoon Lee, Byoung Heon Kang, Soosung Kang</div>
-                    <div class="pub-venue">Bioorganic Chemistry (2020)</div>
+                    <div class="pub-venue">Bioorganic Chemistry, 101, 103901 (2020)</div>
                     <div class="pub-links"><a href="https://doi.org/10.1016/j.bioorg.2020.103901" target="_blank" rel="noopener">DOI</a><span class="pub-if">IF 5.275</span></div>
                 </div>
             </div>
@@ -313,7 +362,8 @@
                 <div>
                     <div class="pub-title">Pseudohypoxic stabilization of HIF1α via cyclophilin D suppression promotes melanoma metastasis</div>
                     <div class="pub-authors">Hye-Kyung Park, Sung Hu, <span class="me">So Yeon Kim</span>, Sora Yoon, Nam Gu Yoon, Ji Hye Lee, Wonyoung Choi, Sun-Young Kong, Jong Heon Kim, Dougu Nam, Byoung Heon Kang</div>
-                    <div class="pub-venue">Signal Transduction and Targeted Therapy (2025)</div>
+                    <div class="pub-venue">Signal Transduction and Targeted Therapy, 10(1), 231 (2025)</div>
+                    <div class="pub-summary">Showed that loss of cyclophilin D raises mitochondrial ROS, stabilizing HIF1α and promoting melanoma metastasis through pseudohypoxia and EMT.</div>
                     <div class="pub-links"><a href="https://doi.org/10.1038/s41392-025-02314-8" target="_blank" rel="noopener">DOI</a><span class="pub-if">IF 52.7</span></div>
                 </div>
             </div>
@@ -323,7 +373,8 @@
                 <div>
                     <div class="pub-title">Development of a Fluorescence Probe for High-Throughput Screening of Allosteric Inhibitors Targeting TRAP1</div>
                     <div class="pub-authors">Nam Gu Yoon, Danbi Choi, Ji Hye Lee, <span class="me">So-Yeon Kim</span>, Jin Young Im, Jisu Yun, Sujae Yang, Taeeun Kim, Soosung Kang, Byoung Heon Kang</div>
-                    <div class="pub-venue">Journal of Medicinal Chemistry (2024)</div>
+                    <div class="pub-venue">Journal of Medicinal Chemistry, 67(23), 21421–21437 (2024)</div>
+                    <div class="pub-summary">Developed a fluorescence probe and high-throughput screening assay for discovering allosteric TRAP1 inhibitors.</div>
                     <div class="pub-links"><a href="https://doi.org/10.1021/acs.jmedchem.4c02343" target="_blank" rel="noopener">DOI</a><span class="pub-if">IF 6.9</span></div>
                 </div>
             </div>
@@ -333,7 +384,7 @@
                 <div>
                     <div class="pub-title">Mitoquinone Inactivates Mitochondrial Chaperone TRAP1 by Blocking the Client Binding Site</div>
                     <div class="pub-authors">Nam Gu Yoon, Hakbong Lee, <span class="me">So-Yeon Kim</span>, Sung Hu, Darong Kim, Sujae Yang, Ki Bum Hong, Ji Hoon Lee, Soosung Kang, Byung-Gyu Kim, Kyungjae Myung, Changwook Lee, Byoung Heon Kang</div>
-                    <div class="pub-venue">Journal of the American Chemical Society (2021)</div>
+                    <div class="pub-venue">Journal of the American Chemical Society, 143(47), 19684–19696 (2021)</div>
                     <div class="pub-links"><a href="https://doi.org/10.1021/jacs.1c07099" target="_blank" rel="noopener">DOI</a><span class="pub-if">IF 15.419</span></div>
                 </div>
             </div>
@@ -343,7 +394,7 @@
                 <div>
                     <div class="pub-title">Design and Synthesis of TRAP1 Selective Inhibitors: H-Bonding with Asn171 Residue in TRAP1 Increases Paralog Selectivity</div>
                     <div class="pub-authors">Sujae Yang, Nam Gu Yoon, Dongyoung Kim, Eunsun Park, <span class="me">So-Yeon Kim</span>, Ji Hoon Lee, Changwook Lee, Byoung Heon Kang, Soosung Kang</div>
-                    <div class="pub-venue">ACS Medicinal Chemistry Letters (2021)</div>
+                    <div class="pub-venue">ACS Medicinal Chemistry Letters, 12(7), 1173–1180 (2021)</div>
                     <div class="pub-links"><a href="https://doi.org/10.1021/acsmedchemlett.1c00213" target="_blank" rel="noopener">DOI</a><span class="pub-if">IF 4.345</span></div>
                 </div>
             </div>
@@ -353,7 +404,7 @@
                 <div>
                     <div class="pub-title">Unleashing the full potential of Hsp90 inhibitors as cancer therapeutics through simultaneous inactivation of Hsp90, Grp94, and TRAP1</div>
                     <div class="pub-authors">Hye-Kyung Park, Nam Gu Yoon, Ji-Eun Lee, Sung Hu, Sora Yoon, <span class="me">So Yeon Kim</span>, Jun-Hee Hong, Dougu Nam, Young Chan Chae, Jong Bae Park, Byoung Heon Kang</div>
-                    <div class="pub-venue">Experimental &amp; Molecular Medicine (2020)</div>
+                    <div class="pub-venue">Experimental &amp; Molecular Medicine, 52(1), 79–91 (2020)</div>
                     <div class="pub-links"><a href="https://doi.org/10.1038/s12276-019-0360-x" target="_blank" rel="noopener">DOI</a><span class="pub-if">IF 8.718</span></div>
                 </div>
             </div>
@@ -373,31 +424,63 @@
             </div>
             <div class="row">
                 <div class="row-year">2023</div>
-                <div class="row-body"><strong>Young Bio Research Award</strong>, <span class="org">Ulsan National Institute of Science &amp; Technology</span></div>
+                <div class="row-body"><strong>Young Bio Research Award (White Ribbon Award)</strong>, <span class="org">Department of Biological Sciences, UNIST</span> <a href="images/awards/2023-young-bio-research-award.jpg" class="badge cert-link" data-cert="2023-young-bio-research-award">Certificate</a></div>
             </div>
             <div class="row">
                 <div class="row-year">2023</div>
-                <div class="row-body"><strong>Best Oral Presentation</strong>, <span class="org">Cell Stress Society International</span></div>
+                <div class="row-body"><strong>Best Oral Presentation</strong>, <span class="org">Cell Stress Society International</span><div class="row-detail">12th International Symposium on HSPs in Biology, Medicine and the Environment &amp; 2nd International Symposium on Chaperone Code, Alexandria, VA, USA</div> <a href="images/awards/2023-cssi-best-oral.jpg" class="badge cert-link" data-cert="2023-cssi-best-oral">Certificate</a></div>
             </div>
             <div class="row">
                 <div class="row-year">2023</div>
-                <div class="row-body"><strong>Best Poster Presentation</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span></div>
+                <div class="row-body"><strong>Best Poster Presentation</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span><div class="row-detail">KSMRM 2023, 17th Annual Conference, Wonju, Korea</div> <a href="images/awards/2023-ksmrm-best-poster.jpg" class="badge cert-link" data-cert="2023-ksmrm-best-poster">Certificate</a></div>
             </div>
             <div class="row">
                 <div class="row-year">2023</div>
-                <div class="row-body"><strong>Silver Prize, Samsung Human Tech Paper Award</strong>, <span class="org">Samsung Electronics</span></div>
+                <div class="row-body"><strong>Silver Prize, 29th Samsung Humantech Paper Award</strong>, <span class="org">Samsung Electronics</span><div class="row-detail">Bio Engineering &amp; Life Science division</div> <a href="images/awards/2023-samsung-humantech-silver.jpg" class="badge cert-link" data-cert="2023-samsung-humantech-silver">Certificate</a></div>
             </div>
             <div class="row">
                 <div class="row-year">2021</div>
-                <div class="row-body"><strong>Young Scientists Award</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span></div>
+                <div class="row-body"><strong>Young Scientists Award</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span><div class="row-detail">KSMRM 2021, 15th Annual Conference, Busan, Korea</div> <a href="images/awards/2021-ksmrm-young-scientists.jpg" class="badge cert-link" data-cert="2021-ksmrm-young-scientists">Certificate</a></div>
             </div>
             <div class="row">
                 <div class="row-year">2020</div>
-                <div class="row-body"><strong>Young Scientists Award</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span></div>
+                <div class="row-body"><strong>Young Scientists Award</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span><div class="row-detail">KSMRM 2020, 14th Annual Conference, Busan, Korea</div> <a href="images/awards/2020-ksmrm-young-scientists.jpg" class="badge cert-link" data-cert="2020-ksmrm-young-scientists">Certificate</a></div>
             </div>
             <div class="row">
                 <div class="row-year">2018</div>
-                <div class="row-body"><strong>Best Poster Presentation</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span></div>
+                <div class="row-body"><strong>Best Poster Presentation (Miracle Award)</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span><div class="row-detail">ASMRM 2018, 15th Conference of the Asian Society for Mitochondrial Research and Medicine. Poster: “The role of mitochondrial chaperone TRAP1 in tumorigenesis under hypoxic condition in glioblastoma”</div> <a href="images/awards/2018-asmrm-poster-award.jpg" class="badge cert-link" data-cert="2018-asmrm-poster-award">Certificate</a></div>
+            </div>
+
+            <h3 class="cert-heading">Certificates</h3>
+            <div class="cert-grid">
+                <figure class="cert" id="cert-2023-young-bio-research-award">
+                    <a href="images/awards/2023-young-bio-research-award.jpg" data-cert="2023-young-bio-research-award"><img src="images/awards/2023-young-bio-research-award-thumb.jpg" alt="Certificate: Young Bio Research Award, UNIST (2023)" loading="lazy"></a>
+                    <figcaption>Young Bio Research Award, UNIST (2023)</figcaption>
+                </figure>
+                <figure class="cert" id="cert-2023-cssi-best-oral">
+                    <a href="images/awards/2023-cssi-best-oral.jpg" data-cert="2023-cssi-best-oral"><img src="images/awards/2023-cssi-best-oral-thumb.jpg" alt="Certificate: Best Oral Presentation, CSSI (2023)" loading="lazy"></a>
+                    <figcaption>Best Oral Presentation, CSSI (2023)</figcaption>
+                </figure>
+                <figure class="cert" id="cert-2023-ksmrm-best-poster">
+                    <a href="images/awards/2023-ksmrm-best-poster.jpg" data-cert="2023-ksmrm-best-poster"><img src="images/awards/2023-ksmrm-best-poster-thumb.jpg" alt="Certificate: Best Poster Presentation, KSMRM (2023)" loading="lazy"></a>
+                    <figcaption>Best Poster Presentation, KSMRM (2023)</figcaption>
+                </figure>
+                <figure class="cert" id="cert-2023-samsung-humantech-silver">
+                    <a href="images/awards/2023-samsung-humantech-silver.jpg" data-cert="2023-samsung-humantech-silver"><img src="images/awards/2023-samsung-humantech-silver-thumb.jpg" alt="Certificate: Silver Prize, Samsung Humantech Paper Award (2023)" loading="lazy"></a>
+                    <figcaption>Silver Prize, Samsung Humantech Paper Award (2023)</figcaption>
+                </figure>
+                <figure class="cert" id="cert-2021-ksmrm-young-scientists">
+                    <a href="images/awards/2021-ksmrm-young-scientists.jpg" data-cert="2021-ksmrm-young-scientists"><img src="images/awards/2021-ksmrm-young-scientists-thumb.jpg" alt="Certificate: Young Scientists Award, KSMRM (2021)" loading="lazy"></a>
+                    <figcaption>Young Scientists Award, KSMRM (2021)</figcaption>
+                </figure>
+                <figure class="cert" id="cert-2020-ksmrm-young-scientists">
+                    <a href="images/awards/2020-ksmrm-young-scientists.jpg" data-cert="2020-ksmrm-young-scientists"><img src="images/awards/2020-ksmrm-young-scientists-thumb.jpg" alt="Certificate: Young Scientists Award, KSMRM (2020)" loading="lazy"></a>
+                    <figcaption>Young Scientists Award, KSMRM (2020)</figcaption>
+                </figure>
+                <figure class="cert" id="cert-2018-asmrm-poster-award">
+                    <a href="images/awards/2018-asmrm-poster-award.jpg" data-cert="2018-asmrm-poster-award"><img src="images/awards/2018-asmrm-poster-award-thumb.jpg" alt="Certificate: Best Poster Presentation, ASMRM (2018)" loading="lazy"></a>
+                    <figcaption>Best Poster Presentation, ASMRM (2018)</figcaption>
+                </figure>
             </div>
         </section>
 
@@ -467,5 +550,30 @@
 
         <footer>Last updated: October 2026</footer>
     </main>
+    <dialog class="lightbox" id="lightbox" aria-label="Certificate">
+        <button type="button" aria-label="Close">×</button>
+        <img src="" alt="">
+        <p></p>
+    </dialog>
+    <script>
+        (function () {
+            var box = document.getElementById('lightbox');
+            if (!box || typeof box.showModal !== 'function') return;
+            var img = box.querySelector('img'), cap = box.querySelector('p');
+            document.querySelectorAll('a[data-cert]').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var fig = document.getElementById('cert-' + a.dataset.cert);
+                    var text = fig ? fig.querySelector('figcaption').textContent : '';
+                    img.src = a.getAttribute('href');
+                    img.alt = 'Certificate: ' + text;
+                    cap.textContent = text;
+                    box.showModal();
+                });
+            });
+            box.querySelector('button').addEventListener('click', function () { box.close(); });
+            box.addEventListener('click', function (e) { if (e.target === box) box.close(); });
+        })();
+    </script>
 </body>
 </html>
