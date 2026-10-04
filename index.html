@@ -173,30 +173,6 @@
         .row-detail { font-size: 0.88rem; color: var(--meta-color); }
         .cert-link { margin-left: 0.35rem; }
 
-        /* Certificates */
-        .cert-heading { margin-top: 2.5rem; }
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-            gap: 1.25rem;
-        }
-        .cert { margin: 0; }
-        .cert a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            aspect-ratio: 4 / 3;
-            background: var(--light-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-            padding: 0.5rem;
-            transition: border-color 0.15s, box-shadow 0.15s;
-        }
-        .cert a:hover { border-color: var(--primary-color); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); }
-        .cert img { max-width: 100%; max-height: 100%; display: block; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
-        .cert figcaption { font-size: 0.82rem; color: var(--meta-color); margin-top: 0.45rem; line-height: 1.4; }
-
         .lightbox {
             border: none;
             padding: 0;
@@ -216,8 +192,38 @@
         }
         .lightbox button:focus-visible { outline: 2px solid #fff; }
 
-        .press-item { margin-bottom: 1rem; }
-        .press-source { font-style: italic; font-size: 0.9rem; color: var(--meta-color); }
+        .press-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 1.25rem;
+        }
+        .press-card {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--bg);
+            color: var(--text-color);
+            transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+        }
+        .press-card:hover {
+            text-decoration: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+        .press-thumb { aspect-ratio: 16 / 9; background: var(--light-bg); border-bottom: 1px solid var(--border-color); }
+        .press-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .press-placeholder {
+            display: flex; align-items: center; justify-content: center;
+            width: 100%; height: 100%;
+            font-weight: 700; font-size: 1.1rem; color: var(--meta-color);
+        }
+        .press-body { padding: 0.8rem 0.95rem 1rem; }
+        .press-title { font-weight: 600; font-size: 0.93rem; line-height: 1.45; color: var(--heading-color); }
+        .press-card:hover .press-title { color: var(--primary-color); }
+        .press-source { font-size: 0.82rem; color: var(--meta-color); margin-top: 0.4rem; }
 
         footer { color: var(--meta-color); font-size: 0.85rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem; }
 
@@ -424,64 +430,33 @@
             </div>
             <div class="row">
                 <div class="row-year">2023</div>
-                <div class="row-body"><strong>Young Bio Research Award (White Ribbon Award)</strong>, <span class="org">Department of Biological Sciences, UNIST</span> <a href="images/awards/2023-young-bio-research-award.jpg" class="badge cert-link" data-cert="2023-young-bio-research-award">Certificate</a></div>
+                <div class="row-body"><strong>Young Bio Research Award (White Ribbon Award)</strong>, <span class="org">Department of Biological Sciences, UNIST</span> <a href="images/awards/2023-young-bio-research-award.jpg" class="badge cert-link" data-caption="Young Bio Research Award, UNIST (2023)" target="_blank" rel="noopener">Certificate</a></div>
             </div>
             <div class="row">
                 <div class="row-year">2023</div>
-                <div class="row-body"><strong>Best Oral Presentation</strong>, <span class="org">Cell Stress Society International</span><div class="row-detail">12th International Symposium on HSPs in Biology, Medicine and the Environment &amp; 2nd International Symposium on Chaperone Code, Alexandria, VA, USA</div> <a href="images/awards/2023-cssi-best-oral.jpg" class="badge cert-link" data-cert="2023-cssi-best-oral">Certificate</a></div>
+                <div class="row-body"><strong>Best Oral Presentation</strong>, <span class="org">Cell Stress Society International</span> <a href="images/awards/2023-cssi-best-oral.jpg" class="badge cert-link" data-caption="Best Oral Presentation, CSSI (2023)" target="_blank" rel="noopener">Certificate</a><div class="row-detail">12th International Symposium on HSPs in Biology, Medicine and the Environment &amp; 2nd International Symposium on Chaperone Code, Alexandria, VA, USA</div></div>
             </div>
             <div class="row">
                 <div class="row-year">2023</div>
-                <div class="row-body"><strong>Best Poster Presentation</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span><div class="row-detail">KSMRM 2023, 17th Annual Conference, Wonju, Korea</div> <a href="images/awards/2023-ksmrm-best-poster.jpg" class="badge cert-link" data-cert="2023-ksmrm-best-poster">Certificate</a></div>
+                <div class="row-body"><strong>Best Poster Presentation</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span> <a href="images/awards/2023-ksmrm-best-poster.jpg" class="badge cert-link" data-caption="Best Poster Presentation, KSMRM (2023)" target="_blank" rel="noopener">Certificate</a><div class="row-detail">KSMRM 2023, 17th Annual Conference, Wonju, Korea</div></div>
             </div>
             <div class="row">
                 <div class="row-year">2023</div>
-                <div class="row-body"><strong>Silver Prize, 29th Samsung Humantech Paper Award</strong>, <span class="org">Samsung Electronics</span><div class="row-detail">Bio Engineering &amp; Life Science division</div> <a href="images/awards/2023-samsung-humantech-silver.jpg" class="badge cert-link" data-cert="2023-samsung-humantech-silver">Certificate</a></div>
+                <div class="row-body"><strong>Silver Prize, 29th Samsung Humantech Paper Award</strong>, <span class="org">Samsung Electronics</span> <a href="images/awards/2023-samsung-humantech-silver.jpg" class="badge cert-link" data-caption="Silver Prize, Samsung Humantech Paper Award (2023)" target="_blank" rel="noopener">Certificate</a><div class="row-detail">Bio Engineering &amp; Life Science division</div></div>
             </div>
             <div class="row">
                 <div class="row-year">2021</div>
-                <div class="row-body"><strong>Young Scientists Award</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span><div class="row-detail">KSMRM 2021, 15th Annual Conference, Busan, Korea</div> <a href="images/awards/2021-ksmrm-young-scientists.jpg" class="badge cert-link" data-cert="2021-ksmrm-young-scientists">Certificate</a></div>
+                <div class="row-body"><strong>Young Scientists Award</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span> <a href="images/awards/2021-ksmrm-young-scientists.jpg" class="badge cert-link" data-caption="Young Scientists Award, KSMRM (2021)" target="_blank" rel="noopener">Certificate</a><div class="row-detail">KSMRM 2021, 15th Annual Conference, Busan, Korea</div></div>
             </div>
             <div class="row">
                 <div class="row-year">2020</div>
-                <div class="row-body"><strong>Young Scientists Award</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span><div class="row-detail">KSMRM 2020, 14th Annual Conference, Busan, Korea</div> <a href="images/awards/2020-ksmrm-young-scientists.jpg" class="badge cert-link" data-cert="2020-ksmrm-young-scientists">Certificate</a></div>
+                <div class="row-body"><strong>Young Scientists Award</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span> <a href="images/awards/2020-ksmrm-young-scientists.jpg" class="badge cert-link" data-caption="Young Scientists Award, KSMRM (2020)" target="_blank" rel="noopener">Certificate</a><div class="row-detail">KSMRM 2020, 14th Annual Conference, Busan, Korea</div></div>
             </div>
             <div class="row">
                 <div class="row-year">2018</div>
-                <div class="row-body"><strong>Best Poster Presentation (Miracle Award)</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span><div class="row-detail">ASMRM 2018, 15th Conference of the Asian Society for Mitochondrial Research and Medicine. Poster: “The role of mitochondrial chaperone TRAP1 in tumorigenesis under hypoxic condition in glioblastoma”</div> <a href="images/awards/2018-asmrm-poster-award.jpg" class="badge cert-link" data-cert="2018-asmrm-poster-award">Certificate</a></div>
+                <div class="row-body"><strong>Best Poster Presentation (Miracle Award)</strong>, <span class="org">Korean Society for Mitochondrial Research &amp; Medicine</span> <a href="images/awards/2018-asmrm-poster-award.jpg" class="badge cert-link" data-caption="Best Poster Presentation, ASMRM (2018)" target="_blank" rel="noopener">Certificate</a><div class="row-detail">ASMRM 2018, 15th Conference of the Asian Society for Mitochondrial Research and Medicine. Poster: “The role of mitochondrial chaperone TRAP1 in tumorigenesis under hypoxic condition in glioblastoma”</div></div>
             </div>
 
-            <h3 class="cert-heading">Certificates</h3>
-            <div class="cert-grid">
-                <figure class="cert" id="cert-2023-young-bio-research-award">
-                    <a href="images/awards/2023-young-bio-research-award.jpg" data-cert="2023-young-bio-research-award"><img src="images/awards/2023-young-bio-research-award-thumb.jpg" alt="Certificate: Young Bio Research Award, UNIST (2023)" loading="lazy"></a>
-                    <figcaption>Young Bio Research Award, UNIST (2023)</figcaption>
-                </figure>
-                <figure class="cert" id="cert-2023-cssi-best-oral">
-                    <a href="images/awards/2023-cssi-best-oral.jpg" data-cert="2023-cssi-best-oral"><img src="images/awards/2023-cssi-best-oral-thumb.jpg" alt="Certificate: Best Oral Presentation, CSSI (2023)" loading="lazy"></a>
-                    <figcaption>Best Oral Presentation, CSSI (2023)</figcaption>
-                </figure>
-                <figure class="cert" id="cert-2023-ksmrm-best-poster">
-                    <a href="images/awards/2023-ksmrm-best-poster.jpg" data-cert="2023-ksmrm-best-poster"><img src="images/awards/2023-ksmrm-best-poster-thumb.jpg" alt="Certificate: Best Poster Presentation, KSMRM (2023)" loading="lazy"></a>
-                    <figcaption>Best Poster Presentation, KSMRM (2023)</figcaption>
-                </figure>
-                <figure class="cert" id="cert-2023-samsung-humantech-silver">
-                    <a href="images/awards/2023-samsung-humantech-silver.jpg" data-cert="2023-samsung-humantech-silver"><img src="images/awards/2023-samsung-humantech-silver-thumb.jpg" alt="Certificate: Silver Prize, Samsung Humantech Paper Award (2023)" loading="lazy"></a>
-                    <figcaption>Silver Prize, Samsung Humantech Paper Award (2023)</figcaption>
-                </figure>
-                <figure class="cert" id="cert-2021-ksmrm-young-scientists">
-                    <a href="images/awards/2021-ksmrm-young-scientists.jpg" data-cert="2021-ksmrm-young-scientists"><img src="images/awards/2021-ksmrm-young-scientists-thumb.jpg" alt="Certificate: Young Scientists Award, KSMRM (2021)" loading="lazy"></a>
-                    <figcaption>Young Scientists Award, KSMRM (2021)</figcaption>
-                </figure>
-                <figure class="cert" id="cert-2020-ksmrm-young-scientists">
-                    <a href="images/awards/2020-ksmrm-young-scientists.jpg" data-cert="2020-ksmrm-young-scientists"><img src="images/awards/2020-ksmrm-young-scientists-thumb.jpg" alt="Certificate: Young Scientists Award, KSMRM (2020)" loading="lazy"></a>
-                    <figcaption>Young Scientists Award, KSMRM (2020)</figcaption>
-                </figure>
-                <figure class="cert" id="cert-2018-asmrm-poster-award">
-                    <a href="images/awards/2018-asmrm-poster-award.jpg" data-cert="2018-asmrm-poster-award"><img src="images/awards/2018-asmrm-poster-award-thumb.jpg" alt="Certificate: Best Poster Presentation, ASMRM (2018)" loading="lazy"></a>
-                    <figcaption>Best Poster Presentation, ASMRM (2018)</figcaption>
-                </figure>
-            </div>
         </section>
 
         <section id="teaching">
@@ -514,37 +489,63 @@
         <section id="press">
             <h2>Press</h2>
             <p style="margin-bottom:1.25rem">My research has been featured in major South Korean media outlets, including Yonhap News Agency and SBS Biz. Titles are translated into English.</p>
-            <div class="press-item">
-                <a href="https://biz.sbs.co.kr/article/20000326486" target="_blank" rel="noopener">“Targeting Cancer-Supporting Adipocytes Opens a New Path to Overcome Chemotherapy Resistance in Breast Cancer”</a>
-                <div class="press-source">SBS Biz (Aug. 2026)</div>
-            </div>
-            <div class="press-item">
-                <a href="https://www.iusm.co.kr/news/articleView.html?idxno=1066256" target="_blank" rel="noopener">“Researchers Identify TRAP1 as a Key Regulator That Turns Adipocytes into ‘Cancer Accomplices’”</a>
-                <div class="press-source">Ulsan Maeil (Aug. 2026)</div>
-            </div>
-            <div class="press-item">
-                <a href="https://www.yna.co.kr/amp/view/AKR20260804097700057" target="_blank" rel="noopener">“Researchers Discover a Regulatory Protein That Enables Adipocytes to Promote Cancer Growth”</a>
-                <div class="press-source">Yonhap News Agency (Aug. 2026)</div>
-            </div>
-            <div class="press-item">
-                <a href="https://www.yna.co.kr/view/AKR20250707094000057" target="_blank" rel="noopener">“UNIST Researchers Selected for National Postdoctoral Research Support Program”</a>
-                <div class="press-source">Yonhap News Agency (Jul. 2025)</div>
-            </div>
-            <div class="press-item">
-                <a href="https://www.metroseoul.co.kr/article/20250707500500" target="_blank" rel="noopener">“UNIST Researchers Selected for the Post-Doc Growth-Oriented Research Support Program”</a>
-                <div class="press-source">Metro Seoul (Jul. 2025)</div>
-            </div>
-            <div class="press-item">
-                <a href="https://webzine.unist.ac.kr/data_ko/no50/sub/infra.php" target="_blank" rel="noopener">“Planting Seeds of Hope: Dr. So-Yeon Kim’s Research Journey Toward New Treatments for Retinal Disease”</a>
-                <div class="press-source">UNIST Magazine, No. 50 (Fall 2025)</div>
-            </div>
-            <div class="press-item">
-                <a href="https://www.yna.co.kr/view/AKR20240115063800057" target="_blank" rel="noopener">“Eye-Drop Treatment Offers a New Approach for Ischemic Retinopathy”</a>
-                <div class="press-source">Yonhap News Agency (Jan. 2024)</div>
-            </div>
-            <div class="press-item">
-                <a href="https://adm-u.unist.ac.kr/unist/center/press.do?article.offset=1460&amp;articleLimit=10&amp;articleNo=250027&amp;mode=view" target="_blank" rel="noopener">“A Convenient Eye-Drop Treatment for Diabetic Retinopathy”</a>
-                <div class="press-source">UNIST News (Jan. 2024)</div>
+            <div class="press-grid">
+                <a class="press-card" href="https://biz.sbs.co.kr/article/20000326486" target="_blank" rel="noopener">
+                    <div class="press-thumb"><img src="images/press/2026-08-sbs-biz.jpg" alt="" loading="lazy" width="640" height="360"></div>
+                    <div class="press-body">
+                        <div class="press-title">“Targeting Cancer-Supporting Adipocytes Opens a New Path to Overcome Chemotherapy Resistance in Breast Cancer”</div>
+                        <div class="press-source">SBS Biz · Aug. 2026</div>
+                    </div>
+                </a>
+                <a class="press-card" href="https://www.iusm.co.kr/news/articleView.html?idxno=1066256" target="_blank" rel="noopener">
+                    <div class="press-thumb"><img src="images/press/2026-08-ulsan-maeil.jpg" alt="" loading="lazy" width="640" height="360"></div>
+                    <div class="press-body">
+                        <div class="press-title">“Researchers Identify TRAP1 as a Key Regulator That Turns Adipocytes into ‘Cancer Accomplices’”</div>
+                        <div class="press-source">Ulsan Maeil · Aug. 2026</div>
+                    </div>
+                </a>
+                <a class="press-card" href="https://www.yna.co.kr/amp/view/AKR20260804097700057" target="_blank" rel="noopener">
+                    <div class="press-thumb"><img src="images/press/2026-08-yonhap.jpg" alt="" loading="lazy" width="640" height="360"></div>
+                    <div class="press-body">
+                        <div class="press-title">“Researchers Discover a Regulatory Protein That Enables Adipocytes to Promote Cancer Growth”</div>
+                        <div class="press-source">Yonhap News Agency · Aug. 2026</div>
+                    </div>
+                </a>
+                <a class="press-card" href="https://www.yna.co.kr/view/AKR20250707094000057" target="_blank" rel="noopener">
+                    <div class="press-thumb"><img src="images/press/2025-07-yonhap.jpg" alt="" loading="lazy" width="640" height="360"></div>
+                    <div class="press-body">
+                        <div class="press-title">“UNIST Researchers Selected for National Postdoctoral Research Support Program”</div>
+                        <div class="press-source">Yonhap News Agency · Jul. 2025</div>
+                    </div>
+                </a>
+                <a class="press-card" href="https://www.metroseoul.co.kr/article/20250707500500" target="_blank" rel="noopener">
+                    <div class="press-thumb"><img src="images/press/2025-07-metro-seoul.jpg" alt="" loading="lazy" width="640" height="360"></div>
+                    <div class="press-body">
+                        <div class="press-title">“UNIST Researchers Selected for the Post-Doc Growth-Oriented Research Support Program”</div>
+                        <div class="press-source">Metro Seoul · Jul. 2025</div>
+                    </div>
+                </a>
+                <a class="press-card" href="https://webzine.unist.ac.kr/data_ko/no50/sub/infra.php" target="_blank" rel="noopener">
+                    <div class="press-thumb"><img src="images/press/2025-unist-magazine.jpg" alt="" loading="lazy" width="640" height="360"></div>
+                    <div class="press-body">
+                        <div class="press-title">“Planting Seeds of Hope: Dr. So-Yeon Kim’s Research Journey Toward New Treatments for Retinal Disease”</div>
+                        <div class="press-source">UNIST Magazine, No. 50 · Fall 2025</div>
+                    </div>
+                </a>
+                <a class="press-card" href="https://www.yna.co.kr/view/AKR20240115063800057" target="_blank" rel="noopener">
+                    <div class="press-thumb"><img src="images/press/2024-01-yonhap.jpg" alt="" loading="lazy" width="640" height="360"></div>
+                    <div class="press-body">
+                        <div class="press-title">“Eye-Drop Treatment Offers a New Approach for Ischemic Retinopathy”</div>
+                        <div class="press-source">Yonhap News Agency · Jan. 2024</div>
+                    </div>
+                </a>
+                <a class="press-card" href="https://adm-u.unist.ac.kr/unist/center/press.do?article.offset=1460&amp;articleLimit=10&amp;articleNo=250027&amp;mode=view" target="_blank" rel="noopener">
+                    <div class="press-thumb"><span class="press-placeholder">UNIST News</span></div>
+                    <div class="press-body">
+                        <div class="press-title">“A Convenient Eye-Drop Treatment for Diabetic Retinopathy”</div>
+                        <div class="press-source">UNIST News · Jan. 2024</div>
+                    </div>
+                </a>
             </div>
         </section>
 
@@ -560,11 +561,10 @@
             var box = document.getElementById('lightbox');
             if (!box || typeof box.showModal !== 'function') return;
             var img = box.querySelector('img'), cap = box.querySelector('p');
-            document.querySelectorAll('a[data-cert]').forEach(function (a) {
+            document.querySelectorAll('a[data-caption]').forEach(function (a) {
                 a.addEventListener('click', function (e) {
                     e.preventDefault();
-                    var fig = document.getElementById('cert-' + a.dataset.cert);
-                    var text = fig ? fig.querySelector('figcaption').textContent : '';
+                    var text = a.dataset.caption;
                     img.src = a.getAttribute('href');
                     img.alt = 'Certificate: ' + text;
                     cap.textContent = text;
